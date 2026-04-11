@@ -31,7 +31,7 @@ saver = 1;
 
 %% Initial conditions
 
-u0 = 1.0*h;
+u0 = 0.7*h;
 du0 = 0.0;
 ddu0_lin = r0 - 2*zeta*omega_n*du0 - omega_n^2*u0;
 ddu0_non = (1/m)*(R0 - c_lin*du0 - Q(E,A,a_L,h,L0,u0));
@@ -256,7 +256,7 @@ plot(Dt_plot,u_lin_plot,'--k')
 xlabel('Relative time, t/T [s]')
 ylabel('Relative displacement, u/u_{lin,max} [m]')
 title('Displacement over time (All algorithms)')
-legend({'CDM non-linear, u_{non}','linear Analytisk, u_{lin}','CDM linear'},'Location','northeast')
+legend({'Newmark non-linear, u_{non}','linear Analytisk, u_{lin}','Newmark linear'},'Location','northeast')
 
 hold off
 figure()
@@ -266,7 +266,7 @@ plot(Dt_plot,u_non_Lagr_plot,'-k')
 xlabel('Relative time, t/T')
 ylabel('Relative displacement, u/u_{max}')
 title('Displacement over time analtic vs lagrange')
-legend({'CDM Non-linear, u_{non}','CDM Non-linear Lagrange, u_{non,lagr}'},'Location','northeast')
+legend({'Newmark Non-linear, u_{non}','Newmark Non-linear Lagrange, u_{non,lagr}'},'Location','northeast')
 
 hold off
 figure()
@@ -278,7 +278,7 @@ plot(Dt_plot,u_lin_plot,'--k')
 xlabel('Relative time, t/T [s]')
 ylabel('Relative displacement, u/u_{lin,max} [m]')
 title('Displacement over time')
-legend({'CDM non-linear Lagrange, u_{non}','linear Analytisk, u_{lin}','CDM linear'},'Location','northeast')
+legend({'Newmark non-linear Lagrange, u_{non}','linear Analytisk, u_{lin}','Newmark linear'},'Location','northeast')
 
 % plots relating to the non-linear internal force of the system
 
